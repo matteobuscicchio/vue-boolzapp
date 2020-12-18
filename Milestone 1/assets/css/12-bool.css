@@ -224,27 +224,13 @@
 		width: calc(100% - 120px);
 	}
 	.contacts_info_menu {
-		position: fixed;
-		top: 20px;
 		right: 10px;
-		height: 100px;
-		background-color: rgba(234, 234, 234, 1);
 	}
 	.text_area {
-		position: fixed;
-		bottom: 120px;
 		right: 10px;
-		background-image: url(../img/mine.jpg);
-		overflow-y: scroll;
-		overflow-x: hidden;
-		height: calc(100% - 220px);
 	}
 	div.user_chat_menu {
-		position: fixed;
-		bottom: 20px;
 		right: 10px;
-		height: 100px;
-		background-color: rgba(243, 238, 234, 1);
 	}
 
 	.col-xxs-1 {
@@ -319,4 +305,27 @@
 		margin-left: calc((100%/12) *11);
 	}
 
+}
+
+
+/* Extra Small screen media */
+@media all and (max-width: 550px){
+
+	aside.side_menu, .chat_menu{
+		display: none;
+	}
+	.width_standard {
+		width: calc(100% - 20px);
+	}
+	.contacts_info_menu {
+		right: 10px;
+	}
+	.text_area {
+		right: 10px;
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
+	div.user_chat_menu {
+		right: 10px;
+	}
 }
