@@ -33,8 +33,17 @@
 }
 
 /* app */
-body {
-	background-color: rgba(0, 150, 136, 1);
+body{
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+#cl_009688 {
+	background-color: #009688;
+	height: 120px;
+}
+#cl_dadbd4 {
+	background-color: #dadbd4;
+	height: 100vh;
 }
 aside.side_menu {
 	top: 20px;
@@ -55,7 +64,7 @@ aside.side_menu {
 	bottom: 120px;
 	right: 150px;
 	background-image: url(../img/mine.jpg);
-	height: calc(100% - 220px);
+	height: calc(100% - 240px);
 }
 div.user_chat_menu {
 	bottom: 20px;
