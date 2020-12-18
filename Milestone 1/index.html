@@ -9,8 +9,8 @@
 
 		<title>vue-boolzapp</title>
 
-		<!-- BOOTSTRAP -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<!-- BOOTSTRAP
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
 
 		<!-- AGGIUNGERE I/IL PERCORSO/I DI CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
@@ -20,29 +20,62 @@
 
 	<body>
 
-		<!-- HEADER -->
-		<header>
-
-			<!-- NAV -->
-			<nav></nav>
-		
-		</header>
-
-
 		<!-- MAIN -->
-		<main></main>
+		<main class="container">
+			
+			<div id="app_container">
 
+				<div class="wrapper d-flex">
 
-		<!-- FOOTER -->
-		<footer></footer>
+					<aside class="side_menu fixed side_menu_common">
+						side menu
+
+						<div class="user_profile">
+							profilo utente
+						</div>
+
+						<div class="notify_section">
+							sezione notifiche
+						</div>
+
+						<div class="contact">
+							sezione contatti
+
+							<div class="search_chat">
+								cerca chat
+							</div>
+
+							<!-- in questo div verrà generato l'elenco delle chat dei contatti, qundi il suo contenuto andrà a generarsi progressivamente -->
+							<div class="chat_menu fixed side_menu_common overflow">
+
+								<div class="opened_chat">
+									chat aperte
+								</div>
+							</div>
+						</div>
+					</aside>
+
+					<div id="chat_area">
+
+						<div class="contacts_info_menu fixed width_standard">
+							friend info
+						</div>
+
+						<div class="text_area fixed width_standard overflow">
+							text area
+						</div>
+
+						<div class="user_chat_menu fixed width_standard">
+							<div class="user_chat_box">user chat</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
 		<!-- Vue-JS -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-		<!-- JQ -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- JS -->
 		<script type="text/javascript" src="./assets/js/main.js"></script>
-
 	</body>
-
 </html>

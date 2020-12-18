@@ -4,8 +4,62 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-/* /reset/ */
 
-body{
-	background-color: #640a64;
+/* utility */
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.wrapper {
+	flex-direction: column;
+	justify-content: space-between;
+}
+.d-flex {
+	display: flex;
+}
+.fixed {
+	position: fixed;
+}
+.overflow {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.width_standard {
+	width: calc(100% - 750px);
+}
+.side_menu_common {
+	left: 150px;
+	width: 450px;
+}
+
+/* app */
+body {
+	background-color: rgba(0, 150, 136, 1);
+}
+aside.side_menu {
+	top: 20px;
+	height: calc(100% - 40px);
+	background-color: rgba(234, 234, 234, 1);
+}
+.chat_menu{
+	bottom: 20px;
+	height: calc(100% - 250px);
+}
+.contacts_info_menu {
+	top: 20px;
+	right: 150px;
+	height: 100px;
+	background-color: rgba(234, 234, 234, 1);
+}
+.text_area {
+	bottom: 120px;
+	right: 150px;
+	background-image: url(../img/mine.jpg);
+	height: calc(100% - 220px);
+}
+div.user_chat_menu {
+	bottom: 20px;
+	right: 150px;
+	height: 100px;
+	background-color: rgba(243, 238, 234, 1);
 }
