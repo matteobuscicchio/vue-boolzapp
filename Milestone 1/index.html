@@ -9,8 +9,8 @@
 
 		<title>vue-boolzapp</title>
 
-		<!-- BOOTSTRAP
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+		<!-- FONTAWESOME -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
 		<!-- AGGIUNGERE I/IL PERCORSO/I DI CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
@@ -22,7 +22,7 @@
 
 		<div id="cl_009688"></div>
 		<div id="cl_dadbd4"></div>
-		
+
 		<!-- MAIN -->
 		<main class="container">
 
@@ -30,24 +30,42 @@
 
 				<div class="wrapper d-flex">
 
+					<!-- side menu -->
 					<aside class="side_menu fixed side_menu_common">
-						side menu
 
-						<div class="user_profile">
-							profilo utente
+						<div class="user_profile d-flex sp_evnl_aln_itm_cent">
+
+							<div class="user_info d-flex sp_evnl_aln_itm_cent">
+								qui vanno le opzioni del profilo utente
+							</div>
+							
+							<i class="fas fa-circle-notch cl_b1b1b1"></i>
+							<i class="fas fa-comment-alt cl_b1b1b1"></i>
+							<i class="fas fa-ellipsis-v cl_b1b1b1"></i>
 						</div>
 
-						<div class="notify_section">
-							sezione notifiche
-						</div>
+						<div class="notify_section d-flex sp_evnl_aln_itm_cent">
 
-						<div class="contact">
-							sezione contatti
-
-							<div class="search_chat">
-								cerca chat
+							<div class="bell_slash d-flex sp_evnl_aln_itm_cent">
+								<i class="far fa-bell-slash cl_b1b1b1"></i>
 							</div>
 
+							<div id="notify_text">
+								<h3>Ricevi notifiche di nuovi messaggi</h3>
+								<a href="">Attiva notifiche descktop</a>
+							</div>
+						</div>
+
+						<!-- sezione contatti -->
+						<div class="contact_area">
+
+							<!-- cerca chat -->
+							<div class="search_chat d-flex sp_evnl_aln_itm_cent">
+								
+								<i class="fas fa-search search_icon cl_b1b1b1"></i>
+								<input id="search_or_new" v-model='newUserText' v-on:keyup.enter="searchOrNew()" name="new_item" placeholder=" Cerca o inizia una nuova chat">
+							</div>
+							
 							<!-- in questo div verrà generato l'elenco delle chat dei contatti, qundi il suo contenuto andrà a generarsi progressivamente -->
 							<div class="chat_menu fixed side_menu_common overflow">
 
@@ -58,18 +76,38 @@
 						</div>
 					</aside>
 
+					<!-- Sezione chat generale -->
 					<div id="chat_area">
 
-						<div class="contacts_info_menu fixed width_standard">
-							friend info
+						<!-- friend info -->
+						<div class="contacts_info_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
+							
+							<div class="contact_info">
+								qui vanno le info del contatto
+							</div>
+
+							<i class="fas fa-search cl_b1b1b1"></i>
+							<i class="fas fa-paperclip cl_b1b1b1"></i>
+							<i class="fas fa-ellipsis-v cl_b1b1b1"></i>
 						</div>
 
 						<div class="text_area fixed width_standard overflow">
 							text area
 						</div>
 
-						<div class="user_chat_menu fixed width_standard">
-							<div class="user_chat_box">user chat</div>
+						<div class="user_chat_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
+
+							<div class="user_emoji dpl_inline">
+								<i class="far fa-smile cl_6b7376"></i>
+							</div>
+
+							<div class="user_chat_box dpl_inline">
+								<input id="userText" v-model='newUserText' v-on:keyup.enter="newMessage()" name="new_item" placeholder="Scrivi un messaggio">
+							</div>
+							
+							<div class="user_vocal_message dpl_inline">
+								<i class="fas fa-microphone cl_6b7376"></i>
+							</div>
 						</div>
 					</div>
 				</div>
