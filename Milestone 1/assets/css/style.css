@@ -39,6 +39,10 @@
 	justify-content: space-evenly;
 	align-items: center;
 }
+.sp_strt_aln_itm_cent{
+	justify-content: start;
+	align-items: center;
+}
 .cl_b1b1b1{
 	color: #b1b1b1;
 }
@@ -66,9 +70,22 @@ body{
 	height: calc(100% - 40px);
 	background-color: rgba(234, 234, 234, 1);
 }
+.user_profile{
+	border-right: 1px solid #d6d6d6;
+}
+.user_profile>i{
+	font-size: xx-large;
+}
 .user_info {
 	width: 60%;
 	height: 100px;
+}
+.user_img{
+	height: 80%;
+	border-radius: 100%;
+}
+.user_info>h3{
+	padding-left: 5px;
 }
 .notify_section{
 	height: 100px;
@@ -80,7 +97,11 @@ body{
 	border-radius: 100%;
 	background-color: white;
 }
-#notify_text>h3{
+.bell_slash>i{
+	font-size: x-large;
+	color: #8edafc;
+}
+#notify_text > h3{
 	font-weight: 100;
 }
 #notify_text>a{
@@ -93,11 +114,15 @@ body{
 	margin: 10px;
 	height: 50px;
 }
+.search_chat>i{
+	font-size: larger;
+}
 .search_icon{
 	padding-left: 10px;
 	padding-right: 10px;
 }
 #search_or_new{
+	font-size: large;
 	padding: 10px;
 	border: transparent;
 	border-radius: 5px;
@@ -118,6 +143,9 @@ body{
 	height: 100px;
 	background-color: rgba(234, 234, 234, 1);
 }
+.contacts_info_menu>i{
+	font-size: xx-large;
+}
 .contact_info {
 	width: 80%;
 }
@@ -129,15 +157,26 @@ body{
 }
 
 .user_chat_menu {
+	border-left: 1px solid #d6d6d6;
 	bottom: 20px;
 	right: 150px;
 	height: 100px;
 	background-color: rgba(243, 238, 234, 1);
 }
+.user_emoji>i,
+.user_vocal_message>i {
+	padding: 20px;
+	font-size: xx-large;
+}
 .user_chat_box{
+	border-radius: 10px;
 	background-color: white;
+	width: -webkit-fill-available;
 }
 #userText{
-	border-radius: 10px;
+	font-size: initial;
 	padding: 20px;
+	border: transparent;
+	border-radius: 50px;
+	width: -webkit-fill-available;
 }
