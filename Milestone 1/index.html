@@ -37,7 +37,7 @@
 
 							<!-- profilo utente -->
 							<div class="user_info d-flex sp_strt_aln_itm_cent">
-								<img class="user_img" src="./assets/img/avatar_io.jpg" alt="">
+								<img class="info_img" src="./assets/img/avatar_io.jpg" alt="">
 								<h3>Nome Utente</h3>
 							</div>
 							
@@ -71,8 +71,25 @@
 							<!-- in questo div verrà generato l'elenco delle chat dei contatti, qundi il suo contenuto andrà a generarsi progressivamente -->
 							<div class="chat_menu fixed side_menu_common overflow">
 
+								<!-- chat aperte -->
 								<div class="opened_chat">
-									chat aperte
+
+									<div class="side_contact_info d-flex sp_strt_aln_itm_cent">
+										<img class="info_img" src="./assets/img/avatar_1.jpg" alt=""> <!-- immagine temporanea -->
+										<div class="side_info">
+											<h3>
+												{{contatto}}
+											</h3>
+											<p>
+												{{ultimo messaggio parziale}}
+											</p>
+										</div>
+										<div class="side_info">
+											<p>
+												{{ultimo accesso}}
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -84,8 +101,16 @@
 						<!-- friend info -->
 						<div class="contacts_info_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
 							
-							<div class="contact_info">
-								qui vanno le info del contatto
+							<div class="contact_info d-flex sp_strt_aln_itm_cent">
+								<img class="info_img" src="./assets/img/avatar_1.jpg" alt=""> <!-- immagine temporanea -->
+								<div class="top_info">
+									<h3>
+										{{contatto}}
+									</h3>
+									<p>
+										{{ultimo accesso}}
+									</p>
+								</div>
 							</div>
 
 							<i class="fas fa-search cl_b1b1b1"></i>
