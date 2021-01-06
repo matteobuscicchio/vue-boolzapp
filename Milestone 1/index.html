@@ -65,7 +65,7 @@
 							<div class="search_chat d-flex sp_evnl_aln_itm_cent">
 								
 								<i class="fas fa-search search_icon cl_b1b1b1"></i>
-								<input id="search_or_new" v-model='newUserText' v-on:keyup.enter="searchOrNew()" name="new_item" placeholder=" Cerca o inizia una nuova chat">
+								<input id="search_or_new" placeholder=" Cerca o inizia una nuova chat">
 							</div>
 							
 							<!-- in questo div verrà generato l'elenco delle chat dei contatti, qundi il suo contenuto andrà a generarsi progressivamente -->
@@ -74,19 +74,17 @@
 								<!-- chat aperte -->
 								<div class="opened_chat">
 
-									<div class="side_contact_info d-flex sp_strt_aln_itm_cent">
-										<img class="info_img" src="./assets/img/avatar_1.jpg" alt=""> <!-- immagine temporanea -->
+									<div v-for="(user,i) in contacts" v-on:click="corrispondentContact(i)" class="side_contact_info d-flex sp_strt_aln_itm_cent">
+										<img class="info_img" :src="`assets/img/avatar${user.avatar}.jpg`" alt="">
 										<div class="side_info">
-											<h3>
-												{{contatto}}
-											</h3>
+											<h3 >{{contacts[i].name}}</h3>
 											<p>
-												{{ultimo messaggio parziale}}
+												<!-- {{ultimo messaggio parziale}} -->
 											</p>
 										</div>
 										<div class="side_info">
 											<p>
-												{{ultimo accesso}}
+												<!-- {{ultimo accesso}} -->
 											</p>
 										</div>
 									</div>
@@ -102,13 +100,11 @@
 						<div class="contacts_info_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
 							
 							<div class="contact_info d-flex sp_strt_aln_itm_cent">
-								<img class="info_img" src="./assets/img/avatar_1.jpg" alt=""> <!-- immagine temporanea -->
+								<img class="info_img" :src="`assets/img/avatar${contacts[contactIndex].avatar}.jpg`" alt=""> <!-- immagine temporanea -->
 								<div class="top_info">
-									<h3>
-										{{contatto}}
-									</h3>
+									<h3>{{contacts[contactIndex].name}}</h3>
 									<p>
-										{{ultimo accesso}}
+										<!-- {{ultimo accesso}} -->
 									</p>
 								</div>
 							</div>
@@ -119,7 +115,7 @@
 						</div>
 
 						<div class="text_area fixed width_standard overflow">
-							text area
+							<!-- text area -->
 						</div>
 
 						<div class="user_chat_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
@@ -129,7 +125,7 @@
 							</div>
 
 							<div class="user_chat_box dpl_inline">
-								<input id="userText" v-model='newUserText' v-on:keyup.enter="newMessage()" name="new_item" placeholder="Scrivi un messaggio">
+								<input id="userText" placeholder="Scrivi un messaggio">
 							</div>
 							
 							<div class="user_vocal_message dpl_inline">

@@ -138,6 +138,10 @@ body{
 
 .side_contact_info{
 	height: 100px;
+	border-bottom: 1px solid gray;
+}
+.side_contact_info:hover{
+	background-color: lightgray;
 }
 .side_contact_info>img{
 	margin-left: 20px;
