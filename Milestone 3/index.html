@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>vue-boolzapp</title>
+
+		<!-- FONTAWESOME -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+		<!-- AGGIUNGERE I/IL PERCORSO/I DI CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/12-bool.css">
+
+	</head>
+
+	<body>
+
+		<div id="cl_009688"></div>
+		<div id="cl_dadbd4"></div>
+
+		<!-- MAIN -->
+		<main class="container">
+
+			<div id="app_container">
+
+				<div class="wrapper d-flex">
+
+					<!-- side menu -->
+					<aside class="side_menu fixed side_menu_common">
+
+						<div class="user_profile d-flex sp_evnl_aln_itm_cent">
+
+							<!-- profilo utente -->
+							<div class="user_info d-flex sp_strt_aln_itm_cent">
+								<img class="info_img" src="./assets/img/avatar_io.jpg" alt="">
+								<h3>Nome Utente</h3>
+							</div>
+							
+							<i class="fas fa-circle-notch cl_b1b1b1"></i>
+							<i class="fas fa-comment-alt cl_b1b1b1"></i>
+							<i class="fas fa-ellipsis-v cl_b1b1b1"></i>
+						</div>
+
+						<div class="notify_section d-flex sp_evnl_aln_itm_cent">
+
+							<div class="bell_slash d-flex sp_evnl_aln_itm_cent">
+								<i class="fas fa-bell-slash cl_b1b1b1"></i>
+							</div>
+
+							<div id="notify_text">
+								<h3>Ricevi notifiche di nuovi messaggi</h3>
+								<a href="">Attiva notifiche descktop</a>
+							</div>
+						</div>
+
+						<!-- sezione contatti -->
+						<div class="contact_area">
+
+							<!-- cerca chat -->
+							<div class="search_chat d-flex sp_evnl_aln_itm_cent">
+								
+								<i class="fas fa-search search_icon cl_b1b1b1"></i>
+								<input id="search_or_new" placeholder=" Cerca o inizia una nuova chat">
+							</div>
+							
+							<!-- in questo div verrà generato l'elenco delle chat dei contatti, qundi il suo contenuto andrà a generarsi progressivamente -->
+							<div class="chat_menu fixed side_menu_common overflow">
+
+								<!-- chat aperte -->
+								<div class="opened_chat">
+
+									<div v-for="(user,contactIndex) in contacts" v-on:click="corrispondentContact(contactIndex)" class="side_contact_info d-flex sp_strt_aln_itm_cent">
+										<img class="info_img" :src="`assets/img/avatar${user.avatar}.jpg`" alt="">
+										<h3 class="pdng_lf_20">{{contacts[contactIndex].name}}</h3>
+										<p><!-- {{ultimo messaggio parziale}} --></p>
+										<span class="currentDate pos_ab">{{lastAccess(contactIndex)}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</aside>
+
+					<!-- Sezione chat generale -->
+					<div id="chat_area">
+
+						<!-- friend info -->
+						<div class="contacts_info_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
+							
+							<div class="contact_info d-flex sp_strt_aln_itm_cent">
+								<img class="info_img" :src="`assets/img/avatar${contacts[contactIndex].avatar}.jpg`" alt=""> <!-- immagine temporanea -->
+								<div class="top_info">
+									<h3>{{contacts[contactIndex].name}}</h3>
+									<span class="currentDate pdng_lf_20"> Ultimo accesso oggi {{lastAccess(contactIndex)}}</span>
+								</div>
+							</div>
+
+							<i class="fas fa-search cl_b1b1b1"></i>
+							<i class="fas fa-paperclip cl_b1b1b1"></i>
+							<i class="fas fa-ellipsis-v cl_b1b1b1"></i>
+						</div>
+
+						<!-- text area -->
+						<div class="text_area fixed width_standard overflow">
+
+							<div v-for="(message,i) in contacts[contactIndex].messages"  class="row">
+								
+								<div :class="`messages ${message.status}`">
+									<p>{{message.text}}</p>
+									<span class="currentDate">{{message.date}}</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="user_chat_menu d-flex sp_evnl_aln_itm_cent fixed width_standard">
+
+							<div class="user_emoji dpl_inline">
+								<i class="far fa-smile cl_6b7376"></i>
+							</div>
+
+							<div class="user_chat_box dpl_inline">
+								<input id="userText" v-model="newUserText" v-on:keyup.enter="newMessage()" placeholder="Scrivi un messaggio">
+							</div>
+							
+							<div class="user_vocal_message dpl_inline">
+								<i class="fas fa-microphone cl_6b7376"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Vue-JS -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<!-- JS -->
+		<script type="text/javascript" src="./assets/js/main.js"></script>
+	</body>
+</html>
